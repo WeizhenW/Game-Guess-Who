@@ -51,10 +51,10 @@ var people = [
     name: 'Phia',
     githubUsername: 'phiathao'
   },
-  {
-    name: 'Rebecca',
-    githubUsername: 'fieldofficeco'
-  },
+  // {
+  //   name: 'Rebecca',
+  //   githubUsername: 'fieldofficeco'
+  // },
   {
     name: 'Ryan',
     githubUsername: 'ryanmundy'
