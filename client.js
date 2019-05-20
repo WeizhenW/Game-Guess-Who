@@ -1,10 +1,12 @@
 $(document).ready(onReady);
+let personToPick = '';
 
 function onReady() {
     promptName();
     //add all images to browser
     addImage();
-    // $('img').on('click', checkPerson);
+    //when click image, check if it's the right person
+    $('img').on('click', checkPerson);
 }
 
 //function to add all images
@@ -15,7 +17,7 @@ function addImage() {
         `)
         $('.allPersons').append(picture);
         picture.data('personName', person.name);
-        console.log(picture.data());
+        // console.log(picture.data());
     })
     
 }
@@ -24,12 +26,20 @@ function addImage() {
 function promptName() {
     let sequenceNum = Math.floor(Math.random() * people.length + 1);
     // let sequenceNum = Math.floor(Math.random() * (1 + people.length - 1) + 1);
-    let personToPick = people[sequenceNum].name;
+    personToPick = people[sequenceNum].name;
     $('#personName').text(personToPick);
 }
 
 // //function to check if it's the correct person clicked
-// function checkPerson() {
-//     let nameClicked = $(this).
-// }
+function checkPerson() {
+    let nameClicked = $(this).data().personName;
+    console.log(nameClicked);
+    if(nameClicked === personToPick) {
+        alert('you got it!!!!!!! let\'do another one!');
+        promptName();
+
+    } else {
+        alert('oops try again!');
+    }
+}
 
