@@ -35,8 +35,8 @@ function checkPerson() {
     let nameClicked = $(this).data().personName;
     console.log(nameClicked);
     if(nameClicked === personToPick) {
-        alert('you got it!!!!!!! let\'do another one!');
-        promptName();
+        alert('you got it!!!!!!! let\'s do another one!');
+        window.setTimeout(promptName, 2000);
 
     } else {
         alert('oops try again!');
