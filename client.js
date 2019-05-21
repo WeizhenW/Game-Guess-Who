@@ -46,7 +46,7 @@ function checkPerson() {
     if(nameClicked === personToPick) {
 
         //if matched, show yellow border
-        $(this).addClass('visual');
+        $(this).fadeOut(2000);
         //restart the game 2 sec after
         setTimeout(function() {
             promptName();
