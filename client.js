@@ -1,5 +1,6 @@
 $(document).ready(onReady);
 let personToPick = '';
+let counter = 0;
 
 function onReady() {
     promptName();
@@ -25,7 +26,7 @@ function onReady() {
 //function to prompt a random name and to add all images in random order
 function promptName() {
     //remove any border highlighting
-    $('img').removeClass('visual');
+    // $('img').removeClass('visual');
     let sequenceNum = Math.floor(Math.random() * people.length);
     // let sequenceNum = Math.floor(Math.random() * (1 + people.length - 1 - 0) + 0);
     personToPick = people[sequenceNum].name;
@@ -38,6 +39,9 @@ function promptName() {
 
 //function to check if it's the correct person clicked
 function checkPerson() {
+    // counter add 1 and display
+    counter += 1;
+    $('#counter').text(counter);
     //get the data method from the image
     let nameClicked = $(this).data().personName;
     console.log(nameClicked);
@@ -61,6 +65,10 @@ function checkPerson() {
 //  function to shuffle the image order
 
 function shuffleImg() {
+    //clear out the counter
+    counter = 0;
+    $('#counter').text(counter);
+
     //create a tempArray to manipulate
     let tempArray = people;
     //loop through all the element in the array
