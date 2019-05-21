@@ -70,7 +70,7 @@ function shuffleImg() {
 
         //attach image at index to the browser
         let picture = $(`
-        <img src="https://github.com/${tempArray[index].githubUsername}.png?size=250" alt="Profile image of ${tempArray[index].name}">
+        <img class="profilePhoto" data-name="oldClassroom" src="https://github.com/${tempArray[index].githubUsername}.png?size=250" alt="Profile image of ${tempArray[index].name}">
         `)
         $('.allPersons').append(picture);
 
